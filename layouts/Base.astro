@@ -1,0 +1,71 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header>Astro workshop</header>
+    <main>
+      <slot />
+    </main>
+    <footer></footer>
+  </body>
+</html>
+
+<style is:global>
+  body {
+    @apply flex;
+    @apply flex-col;
+    @apply h-screen;
+  }
+
+  main {
+    @apply flex-1;
+  }
+
+  html,
+  body {
+    font-family: "Roboto", sans-serif;
+  }
+
+  header {
+    @apply bg-zinc-900;
+    @apply text-sky-400;
+    @apply p-3;
+    @apply font-thin;
+  }
+
+  footer {
+    @apply bg-zinc-900;
+    @apply text-sky-400;
+    @apply p-3;
+    @apply font-thin;
+  }
+
+  h2 {
+    @apply text-2xl;
+    @apply mb-10;
+    @apply font-semibold;
+  }
+
+  p {
+    @apply mb-4;
+  }
+
+  a {
+    @apply underline;
+    @apply decoration-dotted;
+    @apply hover:decoration-solid;
+  }
+</style>
