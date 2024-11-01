@@ -1,0 +1,19 @@
+---
+import ImageDescription from "../components/ImageDescription.astro";
+import Base from "./Base.astro";
+
+interface Props {
+  frontmatter: {
+    title: string;
+    image: string;
+  };
+}
+
+const { frontmatter } = Astro.props;
+---
+
+<Base title={frontmatter.title}>
+  <ImageDescription image={frontmatter.image}>
+    <slot />
+  </ImageDescription>
+</Base>
