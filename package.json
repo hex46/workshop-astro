@@ -34,7 +34,6 @@
   "devDependencies": {
     "@playwright/test": "^1.48.0",
     "@types/node": "^22.7.5",
-    "daisyui": "^4.12.14",
     "prettier": "^3.3.3",
     "prettier-plugin-astro": "^0.14.1",
     "vitest": "^2.1.2"
