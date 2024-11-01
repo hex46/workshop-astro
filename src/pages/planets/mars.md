@@ -1,7 +1,8 @@
 ---
-layout: "../layouts/Page.astro"
+layout: "../../layouts/Page.astro"
 title: "Global Color Views of Mars"
 image: "/img/PIA00407~large.jpg"
+planet: "Mars"
 ---
 
 ## Global Color Views of Mars

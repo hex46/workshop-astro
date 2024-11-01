@@ -1,7 +1,8 @@
 ---
-layout: "../layouts/Page.astro"
+layout: "../../layouts/Page.astro"
 title: "Hubble Captures Vivid Auroras in Jupiter’s Atmosphere"
 image: "/img/hubble-captures-vivid-auroras-in-jupiters-atmosphere_28000029525_o~large.jpg"
+planet: "Jupiter"
 ---
 
 ## Hubble Captures Vivid Auroras in Jupiter’s Atmosphere
