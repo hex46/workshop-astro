@@ -15,7 +15,30 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <header>Astro workshop</header>
+    <header>
+      <nav class="navbar">
+        <div class="flex-1">
+          <a class="btn btn-ghost text-xl" href="/">Index</a>
+        </div>
+        <ul class="menu menu-horizontal px-1">
+          <li>
+            <details>
+              <summary>Planets</summary>
+              <ul class="p-2">
+                <li><a href="/earth">Earth</a></li>
+                <li><a href="/jupiter">Jupiter</a></li>
+                <li><a href="/mars">Mars</a></li>
+                <li><a href="/mercury">Mercury</a></li>
+                <li><a href="/neptune">Neptune</a></li>
+                <li><a href="/saturne">Saturne</a></li>
+                <li><a href="/uranus">Uranus</a></li>
+                <li><a href="/venus">Venus</a></li>
+              </ul>
+            </details>
+          </li>
+        </ul>
+      </nav>
+    </header>
     <main>
       <slot />
     </main>
@@ -67,5 +90,10 @@ const { title } = Astro.props;
     @apply underline;
     @apply decoration-dotted;
     @apply hover:decoration-solid;
+  }
+
+  nav {
+    @apply flex;
+    @apply gap-6;
   }
 </style>
