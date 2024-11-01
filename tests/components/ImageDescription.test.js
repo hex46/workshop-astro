@@ -4,11 +4,10 @@ import ImageDescription from "../../components/ImageDescription.astro";
 
 test("Image Description with title", async () => {
   const container = await AstroContainer.create();
-  const result = await container.renderToString(ImageDescription, {
-    slots: {
-      default: "Card content",
-    },
-  });
+  const result = await container.renderToString(ImageDescription);
 
   expect(result).toContain("The Infrared Face of the Andromeda Galaxy");
+  expect(result).toContain(
+    "https://photojournal.jpl.nasa.gov/catalog/PIA26276",
+  );
 });
