@@ -1,5 +1,5 @@
 ---
-layout: "../../layouts/Page.astro"
+layout: "@/layouts/Page.astro"
 title: "Hubble Reveals Dynamic Atmospheres of Uranus, Neptune"
 image: "/img/stsci-h-p1906c-f-514x514.a~orig.png"
 planet: "Uranus"

@@ -1,5 +1,5 @@
 ---
-layout: "../../layouts/Page.astro"
+layout: "@/layouts/Page.astro"
 title: "Neptune Scooter"
 image: "/img/PIA01142~orig.jpg"
 planet: "Neptune"

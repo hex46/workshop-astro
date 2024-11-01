@@ -1,5 +1,5 @@
 ---
-layout: "../../layouts/Page.astro"
+layout: "@/layouts/Page.astro"
 title: "Hello, Mercury!"
 image: "/img/PIA12262~orig.jpg"
 planet: "Mercury"

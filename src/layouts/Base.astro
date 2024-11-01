@@ -1,10 +1,17 @@
 ---
-import Nav from "../components/Nav.astro";
+import { Nav } from "@/components/Nav";
+import "@/styles/global.css";
+
 interface Props {
   title: string;
 }
 
 const { title } = Astro.props;
+const planets = await Astro.glob("@/pages/planets/*.md");
+const planetsForReact = planets.map((planet) => ({
+  title: planet.frontmatter.planet,
+  url: planet.url,
+}));
 ---
 
 <html lang="fr">
@@ -15,9 +22,9 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body>
+  <body class="dark">
     <header>
-      <Nav />
+      <Nav client:load planets={planetsForReact} />
     </header>
     <main>
       <slot />

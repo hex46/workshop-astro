@@ -1,5 +1,5 @@
 ---
-layout: "../layouts/Page.astro"
+layout: "@/layouts/Page.astro"
 title: "Home"
 image: "/img/PIA26276-large.jpg"
 ---

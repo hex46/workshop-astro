@@ -1,5 +1,5 @@
 ---
-layout: "../../layouts/Page.astro"
+layout: "@/layouts/Page.astro"
 title: "Saturn, Approaching Northern Summer"
 image: "/img/PIA21046~orig.jpg"
 planet: "Saturne"

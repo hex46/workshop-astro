@@ -1,5 +1,5 @@
 ---
-layout: "../../layouts/Page.astro"
+layout: "@/layouts/Page.astro"
 title: "View of Earth photographed by Apollo 15 on voyage to the Moon"
 image: "/img/as15-91-12343~large.jpg"
 planet: "Earth"

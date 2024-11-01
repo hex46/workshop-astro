@@ -1,5 +1,5 @@
 ---
-layout: "../../layouts/Page.astro"
+layout: "@/layouts/Page.astro"
 title: "Venus from Mariner 10"
 image: "/img/PIA23791~orig.jpg"
 planet: "Venus"
