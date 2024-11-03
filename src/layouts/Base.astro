@@ -24,6 +24,7 @@ const planetsForReact = planets.map((planet) => ({
   </head>
   <body class="dark">
     <header>
+      <a href="/">Index</a>
       <Nav client:load planets={planetsForReact} />
     </header>
     <main>
@@ -79,7 +80,7 @@ const planetsForReact = planets.map((planet) => ({
     @apply hover:decoration-solid;
   }
 
-  nav {
+  header {
     @apply flex;
     @apply gap-6;
   }
