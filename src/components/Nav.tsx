@@ -9,7 +9,7 @@ import {
 export const Nav = (props: {planets: {title: string, url: string}[]}) => {;
   return (
 <DropdownMenu>
-  <DropdownMenuTrigger>Menu</DropdownMenuTrigger>
+  <DropdownMenuTrigger>Pages</DropdownMenuTrigger>
   <DropdownMenuContent>
     {props.planets.map(planet => (
       <DropdownMenuItem key={planet.title} onSelect={() => document.location.href = planet.url}>{planet.title}</DropdownMenuItem>

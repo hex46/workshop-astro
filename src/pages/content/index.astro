@@ -1,0 +1,26 @@
+---
+import { getCollection } from "astro:content";
+import Base from "@/layouts/Base.astro";
+import { PlanetCard } from "@/components/PlanetCard";
+
+const planets = await getCollection("planets");
+---
+
+<Base title="content">
+  <div class="grid grid-cols-3 gap-4 p-6">
+    {
+      planets
+        .filter((planet) => !planet.data.isDraft)
+        .map((planet) => (
+          <PlanetCard
+            planet={{
+              name: planet.data.planet,
+              title: planet.data.title,
+              date: planet.data.created,
+              url: "content/" + planet.slug,
+            }}
+          />
+        ))
+    }
+  </div>
+</Base>
