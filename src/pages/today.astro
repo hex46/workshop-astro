@@ -1,0 +1,31 @@
+---
+import Base from "@/layouts/Base.astro";
+import ImageDescription from "../components/ImageDescription.astro";
+
+//
+// Mock : Astro.url.origin + '/mock/apod.json'
+const response = await fetch('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY')
+
+interface NasaAPOD {
+  date: Date,
+  explanation: string,
+  hdurl: URL,
+  media_type: "image",
+  service_version: "v1",
+  title: string,
+  url: URL,
+  source: "https://apod.nasa.gov/apod/"
+}
+
+const data = await response.json() as NasaAPOD
+---
+
+<Base title={data.title}>
+  <ImageDescription image={data.hdurl}>
+    <h2>{data.title}</h2>
+    <p>
+      {data.explanation}
+    </p>
+    <a href={data.source}>Source</a>
+  </ImageDescription>
+</Base>
