@@ -6,7 +6,8 @@ export const prerender = false;
 console.log('Prefetch!')
 
 // Mock : Astro.url.origin + '/mock/apod.json'
-const response = await fetch('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY')
+// API : 'https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY'
+const response = await fetch(Astro.url.origin + '/mock/apod.json')
 
 interface NasaAPOD {
   date: Date,
