@@ -2,7 +2,9 @@
 import Base from "@/layouts/Base.astro";
 import ImageDescription from "../components/ImageDescription.astro";
 
-//
+export const prerender = false;
+console.log('Prefetch!')
+
 // Mock : Astro.url.origin + '/mock/apod.json'
 const response = await fetch('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY')
 

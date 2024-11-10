@@ -27,7 +27,7 @@ const planetsForReact = planets.map((planet) => ({
       <a href="/">Index</a>
       <Nav client:load planets={planetsForReact} />
       <a href="/content">Content</a>
-      <a href="/today">Today</a>
+      <a href="/today" data-astro-prefetch>Today</a>
     </header>
     <main>
       <slot />
