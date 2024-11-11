@@ -1,0 +1,22 @@
+---
+import { findByNasaId } from "../../services/search";
+import ImageDescription from "../../components/ImageDescription.astro";
+import Base from "../../layouts/Base.astro";
+const { nasa_id } = Astro.params;
+export const prerender = false;
+
+const nasaImage = await findByNasaId(nasa_id);
+if (nasaImage === undefined) {
+  return Astro.redirect("/404");
+}
+---
+
+<Base title={nasaImage.data[0].title}>
+  <ImageDescription image={nasaImage.links[0].href}>
+    <h2>{nasaImage.data[0].title}</h2>
+    <p>
+      {nasaImage.data[0].description}
+    </p>
+    <a href={nasaImage.links[0].href}>Source</a>
+  </ImageDescription>
+</Base>

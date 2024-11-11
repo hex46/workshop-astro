@@ -15,8 +15,16 @@ function keywordFilter(query: string) {
     );
 }
 
-export async function search(query = undefined) {
+export async function search(query = undefined): Promise<NasaImage[]> {
   return query === undefined
     ? nasaImages
     : nasaImages.filter(keywordFilter(query));
+}
+
+export async function findByNasaId(id: string): Promise<NasaImage | undefined> {
+  return nasaImages.find((image) =>
+    image.data.some(
+      (dataItem) => dataItem.nasa_id.toLowerCase() === id.toLowerCase(),
+    ),
+  );
 }
