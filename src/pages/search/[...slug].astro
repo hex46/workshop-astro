@@ -1,0 +1,20 @@
+---
+/**
+    Warning:  In 'SSR' mode, this code must be modified.
+    CF : https://docs.astro.build/en/guides/content-collections/#building-for-server-output-ssr
+**/
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const planetEntries = await getCollection("planets");
+  return planetEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Content />

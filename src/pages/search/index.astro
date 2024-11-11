@@ -1,0 +1,45 @@
+---
+import Base from "@/layouts/Base.astro";
+import SearchForm from "@/components/SearchForm.astro";
+import { search } from "@/services/search";
+import { PlanetCard } from "../../components/PlanetCard";
+
+export const prerender = false;
+
+let query = "";
+let nasaImages = await search();
+
+if (Astro.request.method === "POST") {
+  try {
+    const data = await Astro.request.formData();
+    query = data.get("search").toString();
+    nasaImages = await search(query);
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error(error.message);
+    }
+  }
+}
+
+console.log(nasaImages[0]);
+---
+
+<Base title="content">
+  <div class="mt-6 ml-6 w-full max-w-xs">
+    <SearchForm />
+  </div>
+  <div class="grid grid-cols-3 gap-4 p-6">
+    {
+      nasaImages.map((image) => (
+        <PlanetCard
+          planet={{
+            name: image.data[0].nasa_id,
+            title: image.data[0].title,
+            date: new Date(image.data[0].date_created),
+            url: "search/" + image.data[0].nasa_id,
+          }}
+        />
+      ))
+    }
+  </div>
+</Base>
