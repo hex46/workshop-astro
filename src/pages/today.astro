@@ -7,20 +7,20 @@ export const prerender = false;
 // Mock : Astro.url.origin + '/mock/apod.json'
 const API_KEY = import.meta.env.NASA_API_KEY;
 // API : `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`
-const response = await fetch(Astro.url.origin + '/mock/apod.json')
+const response = await fetch(Astro.url.origin + "/mock/apod.json");
 
 interface NasaAPOD {
-  date: Date,
-  explanation: string,
-  hdurl: URL,
-  media_type: "image",
-  service_version: "v1",
-  title: string,
-  url: URL,
-  source: "https://apod.nasa.gov/apod/"
+  date: Date;
+  explanation: string;
+  hdurl: URL;
+  media_type: "image";
+  service_version: "v1";
+  title: string;
+  url: URL;
+  source: "https://apod.nasa.gov/apod/";
 }
 
-const data = await response.json() as NasaAPOD
+const data = (await response.json()) as NasaAPOD;
 ---
 
 <Base title={data.title}>

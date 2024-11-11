@@ -10,7 +10,7 @@ const planets = defineCollection({
     sortOrder: z.number(),
     source: z.string().url(),
     isDraft: z.boolean().optional(),
-  })
+  }),
 });
 
 export const collections = {
