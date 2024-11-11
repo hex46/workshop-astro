@@ -1,4 +1,4 @@
-import { z, reference, defineCollection } from "astro:content";
+import { z, defineCollection } from "astro:content";
 
 const planets = defineCollection({
   type: "content",
@@ -10,7 +10,7 @@ const planets = defineCollection({
     sortOrder: z.number(),
     source: z.string().url(),
     isDraft: z.boolean().optional(),
-  }),
+  })
 });
 
 export const collections = {
