@@ -4,15 +4,17 @@ import SearchForm from "@/components/SearchForm.astro";
 import { search } from "@/services/search";
 import { PlanetCard } from "../../components/PlanetCard";
 
+import type { NasaItem } from "@/services/search";
+
 export const prerender = false;
 
-let query = "";
-let nasaImages = await search();
+let query = undefined;
+let nasaImages: NasaItem[] | undefined = undefined;
 
 if (Astro.request.method === "POST") {
   try {
     const data = await Astro.request.formData();
-    query = data.get("search").toString();
+    query = data.get("search")?.toString();
     nasaImages = await search(query);
   } catch (error) {
     if (error instanceof Error) {
@@ -28,16 +30,20 @@ if (Astro.request.method === "POST") {
   </div>
   <div class="grid grid-cols-3 gap-4 p-6">
     {
-      nasaImages.map((image) => (
-        <PlanetCard
-          planet={{
-            name: image.data[0].nasa_id,
-            title: image.data[0].title,
-            date: new Date(image.data[0].date_created),
-            url: "search/" + image.data[0].nasa_id,
-          }}
-        />
-      ))
+      nasaImages ? (
+        nasaImages.map((image) => (
+          <PlanetCard
+            planet={{
+              name: image.data[0].nasa_id,
+              title: image.data[0].title,
+              date: new Date(image.data[0].date_created),
+              url: "search/" + image.data[0].nasa_id,
+            }}
+          />
+        ))
+      ) : (
+        <h2>Fais une recherche</h2>
+      )
     }
   </div>
 </Base>

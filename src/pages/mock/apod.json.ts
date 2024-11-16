@@ -1,4 +1,4 @@
-export async function GET({ params, request }) {
+export async function GET() {
   return new Response(
     JSON.stringify(
       [

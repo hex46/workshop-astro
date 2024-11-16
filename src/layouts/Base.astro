@@ -9,8 +9,8 @@ interface Props {
 const { title } = Astro.props;
 const planets = await Astro.glob("@/pages/planets/*.md");
 const planetsForReact = planets.map((planet) => ({
-  title: planet.frontmatter.planet,
-  url: planet.url,
+  title: planet.frontmatter.planet as string,
+  url: planet.url as string,
 }));
 ---
 

@@ -5,6 +5,10 @@ import Base from "../../layouts/Base.astro";
 const { nasa_id } = Astro.params;
 export const prerender = false;
 
+if(!nasa_id) {
+  return Astro.redirect("/404")
+}
+
 const nasaImage = await findByNasaId(nasa_id);
 if (nasaImage === undefined) {
   return Astro.redirect("/404");
