@@ -1,4 +1,4 @@
-import type { NasaCollection } from "@/services/search";
+import type { NasaCollection } from "@/mock/data/type";
 
 export const stars : NasaCollection  = {
   "collection": {
