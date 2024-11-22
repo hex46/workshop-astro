@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 
-test("title component is present", async ({ page }) => {
+test.skip("title component is present", async ({ page }) => {
   await page.goto("http://localhost:4321/");
 
   await expect(

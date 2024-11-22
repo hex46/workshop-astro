@@ -1,10 +1,10 @@
 export type NasaCollection = {
   collection: {
-      version: string;
-      href: string;
-      items: NasaItem[];
-      metadata: CollectionMetadata;
-      links?: PaginationLink[];
+    version: string;
+    href: string;
+    items: NasaItem[];
+    metadata: CollectionMetadata;
+    links?: PaginationLink[];
   };
 };
 export type NasaItem = {
