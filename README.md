@@ -1,47 +1,47 @@
-# Astro Starter Kit: Minimal
+# 🌌 Devenez un Astronaute : Découvrez le Framework Astro 🚀
 
-```sh
-npm create astro@latest -- --template minimal
+Bienvenue à l'atelier **"Devenez un Astronaute : Découvrez le Framework Astro"** ! Cet atelier est conçu pour vous initier à l'univers d'[Astro](https://astro.build/), un framework moderne qui simplifie le développement de sites web performants.
+
+En explorant les planètes du système solaire grâce à l'API de la NASA, vous apprendrez les bases d'Astro tout en créant un projet captivant. 🌍🪐🌠
+
+---
+
+## 🎯 Objectifs de l'atelier
+- Découvrir les bases du framework **Astro** : structure, composants, et fichiers.
+- Créer des pages statiques pour chaque planète du système solaire.
+- Consommer une API externe (API de la NASA) pour récupérer des données dynamiques.
+- Comprendre comment Astro génère des sites web ultra-rapides.
+
+---
+
+## 🛠️ Pré-requis
+Avant de commencer, assurez-vous d'avoir les éléments suivants :
+1. **Node.js** (version 16 ou supérieure) : [Télécharger ici](https://nodejs.org/).
+2. **Un éditeur de code** (recommandé : [Visual Studio Code](https://code.visualstudio.com/)).
+3. **Une clé API NASA** :
+    - Créez un compte sur [NASA Open APIs](https://api.nasa.gov/).
+    - Générez une clé API et gardez-la à portée de main.
+
+---
+
+## 🚀 Démarrage rapide  
+
+### Cloner le repo
+```bash
+git clone https://github.com/hex46/workshop-astro.git
+cd workshop-astro
 ```
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+### Installer les dépendances
+```bash
+npm install
 ```
+### Lancer le serveur
+```bash
+npm run dev
+```
+---
+## 💬 Support et questions
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Si vous avez des questions pendant ou après l'atelier, n'hésitez pas à demander ! 🚀
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Happy coding! ✨
