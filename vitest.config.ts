@@ -5,6 +5,7 @@ export default getViteConfig({
   test: {
     /* for example, use global to avoid globals imports (describe, test, expect): */
     // globals: true,
-    include: ["tests/components/**.test.js"],
+    include: ["tests/**.test.js"],
+    exclude: ["_tips/*"],
   },
 });
