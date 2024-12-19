@@ -1,8 +1,8 @@
 // src: https://docs.astro.build/en/guides/endpoints/#params-and-dynamic-routing
 
 interface Planet {
-  name: string,
-  description: string
+  name: string;
+  description: string;
 }
 
 const planets: Planet[] = [
@@ -41,11 +41,11 @@ const planets: Planet[] = [
 ];
 
 export function getStaticPaths() {
-  return planets.map(planet => ({params: {name: planet.name}}));
+  return planets.map((planet) => ({ params: { name: planet.name } }));
 }
 
 function getPlanet(name: string) {
-  return planets.find(planet => planet.name.toLowerCase() === name);
+  return planets.find((planet) => planet.name.toLowerCase() === name);
 }
 
 // @ts-ignore
