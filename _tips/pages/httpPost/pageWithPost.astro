@@ -1,0 +1,14 @@
+---
+// Check HTTP Method
+if (Astro.request.method === "POST") {
+  try {
+    // Do something here
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error(error.message);
+    }
+  }
+}
+---
+
+<div>Hello there!</div>
