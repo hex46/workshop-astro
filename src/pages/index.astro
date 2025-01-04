@@ -1,17 +1,24 @@
 ---
 import Base from "@/layouts/Base.astro";
+import { Image } from "astro:assets";
+import astroIcon from "../assets/astro/astro-icon-dark.png";
 ---
 
 <Base title="Hello there!">
   <div>
+    <Image src={astroIcon} alt="Astro icon" />
     <h1>Le début du voyage commence ici... 🌠</h1>
   </div>
 </Base>
 
 <style>
   div {
+    @apply flex;
+    @apply items-center;
+    @apply flex-col;
     margin: auto;
     text-align: center;
+
     /* Ne pas hésiter à supprimer si nécessaire car cela force une max-width */
     @apply prose;
   }

@@ -66,4 +66,5 @@ Happy coding! ✨
 
 ## 🙏 Crédit
 
-- Les images utilisées et présentes dans le dossier `public/img/` sont la propriété de la NASA.
+- Les images utilisées et présentes dans le dossier `assets/nasa/` sont la propriété de la NASA.
+- Les images utilisées et présentes dans le dossier `assets/astro/` sont la propriété d'Astro.
