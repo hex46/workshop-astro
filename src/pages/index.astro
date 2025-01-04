@@ -1,8 +1,18 @@
 ---
 import Base from "@/layouts/Base.astro";
-import SimpleComponent from "../components/SimpleComponent.astro";
 ---
 
 <Base title="Hello there!">
-  <SimpleComponent title="hey" />
+  <div>
+    <h1>Le début du voyage commence ici... 🌠</h1>
+  </div>
 </Base>
+
+<style>
+  div {
+    margin: auto;
+    text-align: center;
+    /* Ne pas hésiter à supprimer si nécessaire car cela force une max-width */
+    @apply prose;
+  }
+</style>
