@@ -1,8 +1,18 @@
 import { expect, test } from "@playwright/test";
 
-test.describe("Etape 1", () => {
-  test("Afficher la galaxie d'Andromede", async ({ page }) => {
+test.describe("Etape 1 - créer une page .astro présentant la galaxie d'Andromède", () => {
+  test.beforeEach("Accueil", async ({ page }) => {
     await page.goto("/");
+  });
+
+  test("Afficher la galaxie d'Andromède", async ({ page }) => {
+    // Afficher une image
+    const image = page.getByRole("img");
+    await expect(image).toBeVisible();
+    await expect(image).toHaveAttribute(
+      "alt",
+      "The Infrared Face of the Andromeda Galaxy",
+    );
 
     // Afficher un titre
     const titreH2 = page.getByRole("heading", {
