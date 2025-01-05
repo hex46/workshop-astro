@@ -61,3 +61,10 @@ Happy coding! ✨
 - Pourquoi override vite avec la version 6.0.2 dans `package.json` ?
   > Sans cette modification, il n'est pas possible de faire des tests de composants.
   > Plus d'[info ici](https://github.com/withastro/astro/issues/12662#issuecomment-2523630127)
+
+---
+
+## 🙏 Crédit
+
+- Les images utilisées et présentes dans le dossier `assets/nasa/` sont la propriété de la NASA.
+- Les images utilisées et présentes dans le dossier `assets/astro/` sont la propriété d'Astro.

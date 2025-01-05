@@ -17,13 +17,22 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body class="dark">
-    <header></header>
-    <main>
-      <slot />
-    </main>
-    <footer></footer>
+    <header>
+      <a href="/">🚀 Home</a>
+    </header>
+    <h1>Astro workshop</h1>
+    <slot />
+    <footer>🪐</footer>
   </body>
 </html>
+
+<style>
+  h1 {
+    @apply font-bold text-3xl;
+    @apply pt-5 pb-5;
+    @apply text-center;
+  }
+</style>
 
 <style is:global>
   body {
