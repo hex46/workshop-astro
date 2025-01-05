@@ -6,6 +6,5 @@ export default getViteConfig({
     /* for example, use global to avoid globals imports (describe, test, expect): */
     // globals: true,
     include: ["**/*.test.js"],
-    exclude: ["_tips/*"],
   },
 });
