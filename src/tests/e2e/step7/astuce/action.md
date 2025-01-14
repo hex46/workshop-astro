@@ -85,3 +85,4 @@ return Astro.redirect(`/505`);
 
 ```
 
+[Plus d'information ici](https://docs.astro.build/en/guides/actions/#_top).

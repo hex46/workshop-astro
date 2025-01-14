@@ -32,6 +32,6 @@ test.describe("Etape 7 - Creer un formulaire de recherche et des cartes", () => 
     await form.getByRole("button", { name: "Search" }).click();
 
     const cards = page.getByTestId("card");
-    expect(cards.count()).toBe(1);
+    expect(await cards.count()).toBe(1);
   });
 });
