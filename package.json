@@ -11,7 +11,14 @@
     "astro": "astro",
     "test:component": "vitest",
     "test:e2e": "playwright test",
-    "prettier": "prettier -w ."
+    "prettier": "prettier -w .",
+    "test:1": "playwright test step1",
+    "test:2": "playwright test step2",
+    "test:3": "playwright test step3",
+    "test:4": "playwright test step4",
+    "test:5": "playwright test step5",
+    "test:6": "playwright test step6",
+    "test:7": "playwright test step7"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",

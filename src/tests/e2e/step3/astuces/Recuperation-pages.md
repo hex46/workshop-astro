@@ -1,7 +1,10 @@
 # Récupération des pages
 
-Il est possible de récupérer les pages via l'outil de Vite `import.meta.glob()`.
-Voici un exemple :
+Astro permet de récupérer les pages en utilisant l'outil de Vite : `import.meta.glob()`.
+
+### Exemple d'utilisation
+
+Voici un exemple pratique :
 
 ```typescript
 const matches = import.meta.glob("../pages/post/*.md", { eager: true });

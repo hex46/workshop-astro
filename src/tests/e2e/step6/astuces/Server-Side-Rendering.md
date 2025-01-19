@@ -13,7 +13,7 @@ Par défaut, l'intégralité du site sera pré-rendu et des pages HTML statiques
 - Ajouter `export const prerender = false` au niveau page que l'on souhaite générer côté serveur.
 - Activer le mode `server` qui va générer chaque page côté serveur par défaut.
 
-Pour activer ce mode, nous devons modifier `astro.config.mjs` en y ajoutant la ligne suivante:
+Pour activer ce mode, nous devons modifier `astro.config.mjs` en y ajoutant la ligne suivante :
 
 ```js
 // @ts-check

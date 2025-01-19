@@ -1,7 +1,7 @@
 # Astronomy picture of the day (APOD)
 
 La NASA propose un endpoint qui retourne l'image du jour avec quelques éléments en plus.
-Voici un exemple :
+Voici un exemple de données :
 
 ```json
 {
