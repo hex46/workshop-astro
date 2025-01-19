@@ -1,6 +1,6 @@
 import { expect, test } from "@playwright/test";
 
-test.describe("Etape 2", () => {
+test.describe("Etape 2 - créer une page .astro présentant les différentes planètes du système solaire", () => {
   test.beforeEach("Accueil", async ({ page }) => {
     await page.goto("/");
   });
