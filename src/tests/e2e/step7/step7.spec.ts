@@ -20,7 +20,7 @@ test.describe("Etape 7 - Creer un formulaire de recherche et des cartes", () => 
     await expect(submitButton).toBeVisible();
   });
 
-  test("On rempli le formulaire et on recherche la Milky Way. On attend une card en sortie", async ({
+  test("On remplit le formulaire et on recherche la Milky Way. On attend une card en sortie.", async ({
     page,
   }) => {
     await page.goto("/search");
@@ -33,5 +33,41 @@ test.describe("Etape 7 - Creer un formulaire de recherche et des cartes", () => 
 
     const cards = page.getByTestId("card");
     expect(await cards.count()).toBe(1);
+  });
+
+  test("Afficher le lien de redirection vers la page du résultat", async ({
+    page,
+  }) => {
+    await page.goto("/search");
+
+    const form = page.getByRole("form", {
+      name: "Search",
+    });
+    await form.getByRole("textbox", { name: "query" }).fill("Milky Way");
+    await form.getByRole("button", { name: "Search" }).click();
+
+    const cards = page.getByTestId("card");
+    const goToPage = cards.first().getByRole("link", { name: "Read more..." });
+    await expect(goToPage).toBeVisible();
+  });
+
+  test("On clique sur le lien pour être redirigé sur la page dédiée à la Milky Way", async ({
+    page,
+  }) => {
+    await page.goto("/search");
+
+    const form = page.getByRole("form", {
+      name: "Search",
+    });
+    await form.getByRole("textbox", { name: "query" }).fill("Milky Way");
+    await form.getByRole("button", { name: "Search" }).click();
+
+    const cards = page.getByTestId("card");
+    const goToPage = cards.first().getByRole("link", { name: "Read more..." });
+    await goToPage.click();
+
+    await page.waitForURL(
+      "**/search/hubble-observes-one-of-a-kind-star-nicknamed-nasty_17754652960_o",
+    );
   });
 });
