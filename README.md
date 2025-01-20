@@ -8,14 +8,14 @@ En explorant les planètes du système solaire grâce à l'API de la NASA, vous 
 
 ## 🎯 Objectifs de l'atelier
 
-- Découvrir les bases du framework **Astro** : structure, composants, et fichiers.
+- Découvrir les bases du framework **Astro** : structure, composants et fichiers.
 - Créer des pages statiques pour chaque planète du système solaire.
 - Consommer une API externe (API de la NASA) pour récupérer des données dynamiques.
 - Comprendre comment Astro génère des sites web ultra-rapides.
 
 ---
 
-## 🛠️ Pré-requis
+## 🛠️ Prérequis
 
 Avant de commencer, assurez-vous d'avoir les éléments suivants :
 
@@ -29,7 +29,7 @@ Avant de commencer, assurez-vous d'avoir les éléments suivants :
 
 ## 🚀 Démarrage rapide
 
-### Cloner le repo
+### Cloner le dépôt
 
 ```bash
 git clone https://github.com/hex46/workshop-astro.git
@@ -40,6 +40,7 @@ cd workshop-astro
 
 ```bash
 npm install
+npx playwright install --with-deps
 ```
 
 ### Lancer le serveur
@@ -48,17 +49,24 @@ npm install
 npm run dev
 ```
 
+### Lancer les tests d'une étape
+
+```bash
+npm run test:1
+```
+
+Vous pouvez remplacer `1` par le numéro de l'étape pour lancer les tests correspondants.
+
 ---
 
 ## 💬 Support et questions
 
 Si vous avez des questions pendant ou après l'atelier, n'hésitez pas à demander ! 🚀
-
 Happy coding! ✨
 
 ## FAQ
 
-- Pourquoi override vite avec la version 6.0.2 dans `package.json` ?
+- Pourquoi override Vite avec la version 6.0.2 dans `package.json` ?
   > Sans cette modification, il n'est pas possible de faire des tests de composants.
   > Plus d'[info ici](https://github.com/withastro/astro/issues/12662#issuecomment-2523630127)
 

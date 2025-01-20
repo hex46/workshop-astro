@@ -8,45 +8,50 @@ Les actions dans Astro sont des fonctions qui peuvent être exécutées côté s
 Voici un exemple simple pour illustrer comment utiliser les actions dans Astro. Nous allons créer un formulaire de
 contact qui, lorsqu'il est soumis, envoie les données à une action côté serveur.
 
-### Creation de l'action
+### Création de l'action
 
-src/actions/index.ts
+Fichier à créer avec un exemple ci-dessous : `src/actions/index.ts`
 
 ```ts
-import { defineAction, ActionError } from 'astro:actions';
-import { z } from 'astro:schema';
+import { defineAction, ActionError } from "astro:actions";
+import { z } from "astro:schema";
 
 export const server = {
+    /* Exemple d'action à adapter */
   createUser: defineAction({
     input: z.object({
       firstname: z.string(),
-      lastname: z.string()
+      lastname: z.string(),
     }),
     handler: async (input) => {
-      const response = await fetch('http://localhost:8080/users', {
-        method: 'POST', headers: {
-          'Content-Type': 'application/json'
+      const response = await fetch("http://localhost:8080/users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(input)
-      })
+        body: JSON.stringify(input),
+      });
       if (!response.ok) {
         // SI VOUS VOULEZ RETOURNER DES ERREURS, UTILISER LA METHODE ActionError
         throw new ActionError({
           code: "ERREUR",
           message: "Une erreur inconnue c'est produite.",
         });
-        ;
       }
       const data = await response.json();
-      return { id: data.id, firstname: data.firstname, lastname: data.lastname }
-    }
-  })
-}
+      return {
+        id: data.id,
+        firstname: data.firstname,
+        lastname: data.lastname,
+      };
+    },
+  }),
+};
 ```
 
 ### Utiliser l'action au niveau du formulaire
 
-src/page/createUser.astro
+Ci-dessous se trouve un exemple de formulaire
 
 ```html
 ---
@@ -60,9 +65,9 @@ import { actions } from 'astro:actions';
 </form>
 ```
 
-### Utiliser le resultat de l'action
+### Utiliser le résultat de l'action
 
-src/page/createUser.astro
+Ci-dessous se trouve un exemple d'utilisation du résultat
 
 ```html
 ---
@@ -82,7 +87,6 @@ return Astro.redirect(`/505`);
 {result && !result.error && (
 <p class="success">Added {result.data.firstname}</p>
 )}
-
 ```
 
 [Plus d'information ici](https://docs.astro.build/en/guides/actions/#_top).

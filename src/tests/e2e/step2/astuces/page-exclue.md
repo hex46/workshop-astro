@@ -1,5 +1,5 @@
 # Page exclue
 
-Il est possible d'exclure une page en la préfixant d'un `_`. Vous pouvez essayer en créant une page \_pluton.md par exemple.
+Astro permet d'exclure une page du routage en la préfixant par un `_`. Par exemple, vous pouvez essayer de créer une page `_pluton.md`.
 
-Plus d'info ici : https://docs.astro.build/en/guides/routing/#excluding-pages
+Pour plus d'informations, consultez la documentation officielle : [Astro - Excluding Pages](https://docs.astro.build/en/guides/routing/#excluding-pages).

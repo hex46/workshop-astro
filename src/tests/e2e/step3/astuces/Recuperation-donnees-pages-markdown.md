@@ -21,4 +21,4 @@ Hello, Mercury!
 
 Il est possible de récupérer ce qui ce trouve entre les `---` en utilisant l'API suivante : `page.frontmatter.title`.
 
-⚠️ Attention : il n'y a pas de vérification des propriétés présentes dans le frontmatter. Si `title` n'est pas présent, alors un élément vide sera retourné à la place. Pour éviter cela, il faut utiliser les [content collections](https://docs.astro.build/en/guides/content-collections/).
+⚠️ Attention : il n'y a pas de vérification des propriétés présentes dans le frontmatter. Si `title` n'est pas présent, alors un élément vide sera retourné à la place. Pour éviter cela, il faut utiliser les [content collections](https://docs.astro.build/en/guides/content-collections/) (qui seront juste citées dans ce workshop).
