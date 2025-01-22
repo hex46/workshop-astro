@@ -19,7 +19,7 @@ En explorant les planètes du système solaire grâce à l'API de la NASA, vous 
 
 Avant de commencer, assurez-vous d'avoir les éléments suivants :
 
-1. **Node.js** (version 16 ou supérieure) : [Télécharger ici](https://nodejs.org/).
+1. **Node.js** (version 18 ou supérieure) : [Télécharger ici](https://nodejs.org/).
 2. **Un éditeur de code** (recommandé : [Visual Studio Code](https://code.visualstudio.com/)).
 3. **Une clé API NASA** :
    - Créez un compte sur [NASA Open APIs](https://api.nasa.gov/).
