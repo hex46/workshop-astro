@@ -1,12 +1,11 @@
 import { expect, test } from "@playwright/test";
 
 test.describe("Etape 2 - créer une page .astro présentant les différentes planètes du système solaire", () => {
-  test.beforeEach("Accueil", async ({ page }) => {
-    await page.goto("/");
-  });
-
   test("Afficher la planète Terre", async ({ page }) => {
     await page.goto("/planets/earth");
+
+    //Afficher le titre de l'onglet
+    expect(await page.title()).toBe("Earth");
 
     // Afficher un titre
     const titreH2 = page.getByRole("heading", {
@@ -41,6 +40,9 @@ test.describe("Etape 2 - créer une page .astro présentant les différentes pla
 
   test("Afficher la planète Jupiter", async ({ page }) => {
     await page.goto("/planets/jupiter");
+
+    //Afficher le titre de l'onglet
+    expect(await page.title()).toBe("Jupiter");
 
     // Afficher un titre
     const titreH2 = page.getByRole("heading", {
@@ -81,6 +83,9 @@ test.describe("Etape 2 - créer une page .astro présentant les différentes pla
   test("Afficher la planète Mars", async ({ page }) => {
     await page.goto("/planets/mars");
 
+    //Afficher le titre de l'onglet
+    expect(await page.title()).toBe("Mars");
+
     // Afficher un titre
     const titreH2 = page.getByRole("heading", {
       name: "Global Color Views of Mars",
@@ -110,6 +115,9 @@ test.describe("Etape 2 - créer une page .astro présentant les différentes pla
   test("Afficher la planète Mercure", async ({ page }) => {
     await page.goto("/planets/mercury");
 
+    //Afficher le titre de l'onglet
+    expect(await page.title()).toBe("Mercury");
+
     // Afficher un titre
     const titreH2 = page.getByRole("heading", {
       name: "Hello, Mercury!",
@@ -138,6 +146,9 @@ test.describe("Etape 2 - créer une page .astro présentant les différentes pla
 
   test("Afficher la planète Neptune", async ({ page }) => {
     await page.goto("/planets/neptune");
+
+    //Afficher le titre de l'onglet
+    expect(await page.title()).toBe("Neptune");
 
     // Afficher un titre
     const titreH2 = page.getByRole("heading", {
@@ -169,6 +180,9 @@ test.describe("Etape 2 - créer une page .astro présentant les différentes pla
 
   test("Afficher la planète Saturne", async ({ page }) => {
     await page.goto("/planets/saturn");
+
+    //Afficher le titre de l'onglet
+    expect(await page.title()).toBe("Saturn");
 
     // Afficher un titre
     const titreH2 = page.getByRole("heading", {
@@ -203,6 +217,9 @@ test.describe("Etape 2 - créer une page .astro présentant les différentes pla
 
   test("Afficher la planète Uranus", async ({ page }) => {
     await page.goto("/planets/uranus");
+
+    //Afficher le titre de l'onglet
+    expect(await page.title()).toBe("Uranus");
 
     // Afficher un titre
     const titreH2 = page.getByRole("heading", {
@@ -242,6 +259,9 @@ test.describe("Etape 2 - créer une page .astro présentant les différentes pla
   test("Afficher la planète Venus", async ({ page }) => {
     await page.goto("/planets/venus");
 
+    //Afficher le titre de l'onglet
+    expect(await page.title()).toBe("Venus");
+
     // Afficher un titre
     const titreH2 = page.getByRole("heading", {
       name: "Venus from Mariner 10",
@@ -276,6 +296,9 @@ test.describe("Etape 2 - créer une page .astro présentant les différentes pla
 
   test("Afficher une page 404 pour Pluton", async ({ page }) => {
     await page.goto("/planets/pluton");
+
+    //Afficher le titre de l'onglet
+    expect(await page.title()).toBe("404");
 
     // Afficher la description
     const description = await page.getByRole("paragraph").all();
