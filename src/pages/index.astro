@@ -5,21 +5,6 @@ import astroIcon from "../assets/astro/astro-icon-dark.png";
 ---
 
 <Base title="Hello there!">
-  <div>
-    <Image src={astroIcon} alt="Astro icon" />
-    <h2>Le début du voyage commence ici... 🌠</h2>
-  </div>
+  <Image src={astroIcon} alt="Astro icon" />
+  <h2>Le début du voyage commence ici... 🌠</h2>
 </Base>
-
-<style>
-  div {
-    @apply flex;
-    @apply items-center;
-    @apply flex-col;
-    margin: auto;
-    text-align: center;
-
-    /* Ne pas hésiter à supprimer si nécessaire car cela force une max-width */
-    @apply prose;
-  }
-</style>
