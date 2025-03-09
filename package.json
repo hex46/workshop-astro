@@ -9,21 +9,22 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "test:component": "vitest",
     "test:e2e": "playwright test",
     "prettier": "prettier -w .",
     "test:1": "playwright test step1",
     "test:2": "playwright test step2",
     "test:3": "playwright test step3",
-    "test:4": "playwright test step4",
-    "test:5": "playwright test step5",
-    "test:6": "playwright test step6",
-    "test:7": "playwright test step7"
+    "test:4": "playwright test step4"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
+    "@astrojs/react": "^4.2.1",
     "@picocss/pico": "^2.0.6",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
     "astro": "^5.4.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "sass": "^1.85.1",
     "typescript": "^5.8.2"
   },
@@ -31,7 +32,6 @@
     "@playwright/test": "^1.51.0",
     "@types/node": "^22.13.10",
     "prettier": "^3.5.3",
-    "prettier-plugin-astro": "^0.14.1",
-    "vitest": "^3.0.8"
+    "prettier-plugin-astro": "^0.14.1"
   }
 }

@@ -6,20 +6,18 @@ test.describe("Etape 1 - créer une page .astro présentant la galaxie d'Androm�
   });
 
   test("Afficher la galaxie d'Andromède", async ({ page }) => {
-    // Afficher une image
-    const image = page.getByRole("img");
-    await expect(image).toBeVisible();
-    await expect(image).toHaveAttribute(
-      "alt",
-      "The Infrared Face of the Andromeda Galaxy",
-    );
-
     // Afficher un titre
     const titreH2 = page.getByRole("heading", {
       name: "The Infrared Face of the Andromeda Galaxy",
       level: 2,
     });
     await expect(titreH2).toBeVisible();
+
+    // Afficher une image
+    const image = page.getByAltText(
+      "The Infrared Face of the Andromeda Galaxy",
+    );
+    await expect(image).toBeVisible();
 
     // Afficher la description
     const description = await page.getByRole("paragraph").all();

@@ -17,7 +17,7 @@ import { defineAction, ActionError } from "astro:actions";
 import { z } from "astro:schema";
 
 export const server = {
-    /* Exemple d'action à adapter */
+  /* Exemple d'action à adapter */
   createUser: defineAction({
     input: z.object({
       firstname: z.string(),
@@ -58,7 +58,7 @@ Ci-dessous se trouve un exemple de formulaire
 import { actions } from 'astro:actions';
 ---
 
-<form method="POST" action={actions.createUser}>
+<form method="POST" action="{actions.createUser}">
   <input type="text" name="firstname" />
   <input type="text" name="lastname" />
   <button type="submit">Submit</button>
@@ -79,7 +79,7 @@ return Astro.redirect(`/505`);
 }
 ---
 
-<form method="POST" action={actions.createUser}>
+<form method="POST" action="{actions.createUser}">
   <input type="text" name="firstname" />
   <input type="text" name="lastname" />
   <button type="submit">Submit</button>

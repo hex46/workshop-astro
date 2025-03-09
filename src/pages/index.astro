@@ -1,12 +1,32 @@
 ---
 import Base from "@/layouts/Base.astro";
 import { Image } from "astro:assets";
-import astroIcon from "../assets/astro/astro-icon-light-gradient.png";
+import astroIcon from "@/assets/nasa/andromeda.jpg";
 ---
 
 <Base title="Hello there!">
-  <h2>Le début du voyage commence ici... 🌠</h2>
-  <Image src={astroIcon} alt="Astro icon" />
+  <h2>The Infrared Face of the Andromeda Galaxy</h2>
+  <Image src={astroIcon} alt="The Infrared Face of the Andromeda Galaxy" />
+  <p>
+    This image from NASA's retired Spitzer Space Telescope highlights the stars
+    and dust clouds in the Andromeda galaxy. One of Earth's nearest galactic
+    neighbors, Andromeda spans a swath of sky nearly 3.8 degrees across, which
+    is close to the width of eight full Moons lined up side by side. The area
+    around the galaxy includes data from NASA's Wide-field Infrared Survey
+    Explorer (WISE).
+  </p>
+  <p>
+    Spitzer observed infrared light, a range of wavelengths longer than what
+    human eyes can detect. In this image, starlight glows blue and cyan
+    (representing infrared wavelengths of 3.6 and 4.5 microns). Dust dominates
+    the galaxy in red (8 microns). The longest wavelength detected by Spitzer
+    (24 microns) gives an indication of the dust's temperature and is
+    represented in green; it combines with the red to create orange and yellow,
+    indicating regions where stars are forming.
+  </p>
+  <p>
+    <a href="https://photojournal.jpl.nasa.gov/catalog/PIA2627">Source</a>
+  </p>
 </Base>
 
 <style>
