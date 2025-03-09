@@ -30,3 +30,14 @@ const { title } = Astro.props;
     <footer class="container">🪐</footer>
   </body>
 </html>
+
+<style is:global>
+  body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  main {
+    flex-grow: 2;
+  }
+</style>
