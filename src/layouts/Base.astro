@@ -1,5 +1,5 @@
 ---
-import "@/styles/global.css";
+import "@/styles/global.scss";
 import Navigation from "../components/Navigation.astro";
 
 interface Props {
@@ -17,87 +17,16 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="dark">
-    <header>
-      <a href="/">🚀 Home</a>
+  <body>
+    <header class="container">
+      <Navigation />
     </header>
-    <h1>Astro workshop</h1>
-    <main>
+    <hr />
+    <main class="container">
+      <h1>Astro workshop</h1>
       <slot />
     </main>
-    <footer>🪐</footer>
+    <hr />
+    <footer class="container">🪐</footer>
   </body>
 </html>
-
-<style>
-  h1 {
-    @apply font-bold text-3xl;
-    @apply pt-5 pb-5;
-    @apply text-center;
-  }
-
-  main {
-    @apply flex;
-    @apply items-center;
-    @apply flex-col;
-    margin: auto;
-    text-align: center;
-
-    /* Ne pas hésiter à supprimer si nécessaire car cela force une max-width */
-    @apply prose;
-  }
-</style>
-
-<style is:global>
-  body {
-    @apply flex;
-    @apply flex-col;
-    @apply h-screen;
-  }
-
-  main {
-    @apply flex-1;
-  }
-
-  html,
-  body {
-    font-family: "Roboto", sans-serif;
-  }
-
-  header {
-    @apply bg-zinc-900;
-    @apply text-sky-400;
-    @apply p-3;
-    @apply font-thin;
-    @apply flex;
-    @apply justify-between;
-  }
-
-  footer {
-    @apply bg-zinc-900;
-    @apply text-sky-400;
-    @apply p-3;
-    @apply font-thin;
-  }
-
-  h2 {
-    @apply text-2xl;
-    @apply mb-10;
-    @apply font-semibold;
-  }
-
-  p {
-    @apply mb-4;
-  }
-
-  a {
-    @apply underline;
-    @apply decoration-dotted;
-    @apply hover:decoration-solid;
-  }
-
-  header {
-    @apply flex;
-    @apply gap-6;
-  }
-</style>
