@@ -7,7 +7,7 @@ test.describe("Etape 7 - Creer un formulaire de recherche et des cartes", () => 
 
     // Ajout de la balise form
     const form = page.getByRole("form", {
-      name: "Search",
+      name: "search",
     });
     await expect(form).toBeVisible();
 
@@ -20,7 +20,7 @@ test.describe("Etape 7 - Creer un formulaire de recherche et des cartes", () => 
     await expect(submitButton).toBeVisible();
   });
 
-  test("On remplit le formulaire et on recherche la Milky Way. On attend une card en sortie.", async ({
+  test("On remplit le formulaire et on recherche la Milky Way. On attend plusieurs cards en sortie.", async ({
     page,
   }) => {
     await page.goto("/search");
@@ -31,8 +31,8 @@ test.describe("Etape 7 - Creer un formulaire de recherche et des cartes", () => 
     await form.getByRole("textbox", { name: "query" }).fill("Milky Way");
     await form.getByRole("button", { name: "Search" }).click();
 
-    const cards = page.getByTestId("card");
-    expect(await cards.count()).toBe(1);
+    const cards = page.getByRole("article");
+    expect(await cards.count()).toBe(5);
   });
 
   test("Afficher le lien de redirection vers la page du résultat", async ({

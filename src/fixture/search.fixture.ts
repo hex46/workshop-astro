@@ -1,4 +1,4 @@
-import type { NasaCollection } from "./NasaType.ts";
+import type { NasaCollection } from "../type/NasaType.ts";
 
 export const searchCollectionFixture: NasaCollection = {
   collection: {

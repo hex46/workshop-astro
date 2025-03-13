@@ -26,7 +26,7 @@ type NasaData = {
   location?: string;
   photographer?: string;
 };
-type ResourceLink = {
+export type ResourceLink = {
   href: string;
   rel: string;
   render?: string;

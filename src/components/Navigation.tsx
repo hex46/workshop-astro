@@ -8,7 +8,14 @@ const Navigation = ({ planets }: Props) => {
   return (
     <nav>
       <ul>
-        <li><a href="/" className="contrast"><strong>🚀 Home</strong></a></li>
+        <li>
+          <a href="/" className="contrast">
+            <strong>🚀 Home</strong>
+          </a>
+        </li>
+        <li>
+          <a href="/search">Search</a>
+        </li>
       </ul>
       <ul>
         {planets.map((planet) => (
