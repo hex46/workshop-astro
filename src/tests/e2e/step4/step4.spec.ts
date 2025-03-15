@@ -1,18 +1,16 @@
 import { test } from "playwright/test";
 import { expect } from "@playwright/test";
 
-test.describe("Etape 7 - Creer un formulaire de recherche et des cartes", () => {
+test.describe("Etape 4 - Creer un formulaire de recherche et des cartes", () => {
   test("Afficher le formulaire SANS ACTION", async ({ page }) => {
     await page.goto("/search");
 
     // Ajout de la balise form
-    const form = page.getByRole("form", {
-      name: "search",
-    });
-    await expect(form).toBeVisible();
+    const form = page.getByRole("form", { name: "search" });
+    await expect(page.getByRole("form")).toBeVisible();
 
     // Ajout du text input
-    const queryTextBox = form.getByRole("textbox", { name: "query" });
+    const queryTextBox = form.getByRole("textbox");
     await expect(queryTextBox).toBeVisible();
 
     // Ajout du bouton de submit
@@ -25,10 +23,8 @@ test.describe("Etape 7 - Creer un formulaire de recherche et des cartes", () => 
   }) => {
     await page.goto("/search");
 
-    const form = page.getByRole("form", {
-      name: "Search",
-    });
-    await form.getByRole("textbox", { name: "query" }).fill("Milky Way");
+    const form = page.getByRole("form", { name: "search" });
+    await form.getByRole("textbox").fill("Milky Way");
     await form.getByRole("button", { name: "Search" }).click();
 
     const cards = page.getByRole("article");
@@ -40,13 +36,11 @@ test.describe("Etape 7 - Creer un formulaire de recherche et des cartes", () => 
   }) => {
     await page.goto("/search");
 
-    const form = page.getByRole("form", {
-      name: "Search",
-    });
-    await form.getByRole("textbox", { name: "query" }).fill("Milky Way");
+    const form = page.getByRole("form", { name: "search" });
+    await form.getByRole("textbox").fill("Milky Way");
     await form.getByRole("button", { name: "Search" }).click();
 
-    const cards = page.getByTestId("card");
+    const cards = page.getByRole("article");
     const goToPage = cards.first().getByRole("link", { name: "Read more..." });
     await expect(goToPage).toBeVisible();
   });
@@ -56,18 +50,14 @@ test.describe("Etape 7 - Creer un formulaire de recherche et des cartes", () => 
   }) => {
     await page.goto("/search");
 
-    const form = page.getByRole("form", {
-      name: "Search",
-    });
-    await form.getByRole("textbox", { name: "query" }).fill("Milky Way");
+    const form = page.getByRole("form", { name: "search" });
+    await form.getByRole("textbox").fill("Milky Way");
     await form.getByRole("button", { name: "Search" }).click();
 
-    const cards = page.getByTestId("card");
+    const cards = page.getByRole("article");
     const goToPage = cards.first().getByRole("link", { name: "Read more..." });
     await goToPage.click();
 
-    await page.waitForURL(
-      "**/search/hubble-observes-one-of-a-kind-star-nicknamed-nasty_17754652960_o",
-    );
+    await page.waitForURL("**/search/PIA03239");
   });
 });
