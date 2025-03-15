@@ -10,6 +10,6 @@ export default defineConfig({
   output: "server",
   integrations: [react()],
   adapter: node({
-    mode: "middleware",
+    mode: "standalone",
   }),
 });

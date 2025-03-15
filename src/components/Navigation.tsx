@@ -1,5 +1,3 @@
-import * as React from "react";
-
 interface Props {
   planets: Planet[];
 }
@@ -8,7 +6,7 @@ const Navigation = ({ planets }: Props) => {
   return (
     <nav>
       <ul>
-        <li>
+        <li key="home">
           <a href="/" className="contrast">
             <strong>🚀 Home</strong>
           </a>
@@ -19,7 +17,7 @@ const Navigation = ({ planets }: Props) => {
       </ul>
       <ul>
         {planets.map((planet) => (
-          <li>
+          <li key={planet.id}>
             <a href={`/planets/${planet.id}`}>{planet.name}</a>
           </li>
         ))}
