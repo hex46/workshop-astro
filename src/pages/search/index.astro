@@ -2,8 +2,8 @@
 import SearchForm from "@/components/SearchForm.astro";
 import Base from "@/layouts/Base.astro";
 import { actions } from 'astro:actions';
-import type {NasaItem, ResourceLink} from "../../type/NasaType";
-import ResultCard from "../../components/ResultCard.astro";
+import type {NasaItem, ResourceLink} from "@/type/NasaType";
+import ResultCard from "@/components/ResultCard.astro";
 
 let query = undefined;
 const result = Astro.getActionResult(actions.search);
@@ -11,7 +11,7 @@ const result = Astro.getActionResult(actions.search);
 
 
 <Base title="Search">
-    <form method="POST" action={actions.search} name="search">
+    <form method="POST" action={actions.search} aria-label="search">
         <SearchForm query={query} />
     </form>
         {

@@ -10,7 +10,7 @@ export const server = {
     }),
     handler: async (input) => {
       const response = await fetch(
-        `https://images-api.nasa.gov/search?q=${input.query}&page_size=100&media_type=image`,
+        `https://images-api.nasa.gov/search?q=${input.query}&page_size=5&media_type=image`,
       );
       const data = (await response.json()) as NasaCollection;
 
@@ -19,7 +19,7 @@ export const server = {
           a.data[0].nasa_id.localeCompare(b.data[0].nasa_id);
       }
 
-      return data.collection.items.sort(sortResult()).slice(0, 5);
+      return data.collection.items.sort(sortResult());
     },
   }),
 };

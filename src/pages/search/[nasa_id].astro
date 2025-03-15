@@ -1,7 +1,32 @@
 ---
 import Base from "@/layouts/Base.astro";
+import { findByNasaId } from "@/services/search";
+import { Image } from "astro:assets";
+
+const { nasa_id } = Astro.params;
+
+if (!nasa_id) {
+  return Astro.redirect("/404");
+}
+
+const nasaItem = await findByNasaId(nasa_id);
+
+if (!nasaItem) {
+  return Astro.redirect("/404");
+}
+
+const description = nasaItem.data[0].description;
+const source = nasaItem.href;
+const image = nasaItem.links.find((image) => (image.render = "image"))?.href;
 ---
 
 <Base title="Hello there">
-  <h1>TO DO</h1>
+  <h2>{nasa_id}</h2>
+  {
+    image && description && (
+      <Image src={image} alt={description} width="800" height="600" />
+    )
+  }
+  <p>{description}</p>
+  <a href={source}>Source</a>
 </Base>
