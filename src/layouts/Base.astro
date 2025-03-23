@@ -1,6 +1,5 @@
 ---
 import "@/styles/global.scss";
-import Navigation from "@/components/Navigation";
 import { getCollection } from "astro:content";
 
 interface Props {
@@ -8,11 +7,6 @@ interface Props {
 }
 
 const { title } = Astro.props;
-
-const planets = await getCollection("planets");
-const planetsForNavigation = planets.map(
-  (planet) => ({ id: planet.id, name: planet.data.planet }) as Planet,
-);
 ---
 
 <html lang="fr">
