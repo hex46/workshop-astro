@@ -1,12 +1,18 @@
 ---
 import "@/styles/global.scss";
 import { getCollection } from "astro:content";
+import Navigation from "@/components/Navigation";
 
 interface Props {
   title: string;
 }
 
 const { title } = Astro.props;
+
+const planets = await getCollection("planets");
+const planetsForNavigation = planets.map(
+  (planet) => ({ id: planet.id, name: planet.data.planet }) as Planet,
+);
 ---
 
 <html lang="fr">
@@ -19,15 +25,7 @@ const { title } = Astro.props;
   </head>
   <body>
     <header class="container">
-      <nav>
-        <ul>
-          <li>
-            <a href="/" class="contrast">
-              <strong>🚀 Home</strong>
-            </a>
-          </li>
-        </ul>
-      </nav>
+      <Navigation planets={planetsForNavigation} />
     </header>
     <hr />
     <main class="container">
