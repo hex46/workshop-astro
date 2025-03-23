@@ -25,7 +25,15 @@ const planetsForNavigation = planets.map(
   </head>
   <body>
     <header class="container">
-      <Navigation planets={planetsForNavigation} client:load />
+      <nav>
+        <ul>
+          <li>
+            <a href="/" class="contrast">
+              <strong>🚀 Home</strong>
+            </a>
+          </li>
+        </ul>
+      </nav>
     </header>
     <hr />
     <main class="container">
@@ -43,7 +51,14 @@ const planetsForNavigation = planets.map(
     display: flex;
     flex-direction: column;
   }
+
   main {
     flex-grow: 2;
+  }
+
+  img {
+    margin: auto;
+    width: max-content;
+    display: block;
   }
 </style>
