@@ -1,0 +1,15 @@
+---
+import type { NasaItem } from "../type/NasaType";
+
+interface Props {
+  item: NasaItem;
+}
+
+const { item } = Astro.props;
+---
+
+<article>
+  <header>{item.data[0].nasa_id}</header>
+  {item.data[0].description}
+  <footer><a href={`/search/${item.data[0].nasa_id}`}>Read more...</a></footer>
+</article>

@@ -1,0 +1,23 @@
+---
+import Base from "@/layouts/Base.astro";
+
+import { actions } from "astro:actions";
+import ResultCard from "@/components/ResultCard.astro";
+
+const result = Astro.getActionResult(actions.search);
+---
+
+<Base title="Search">
+  <form method="POST" action={actions.search} aria-label="search">
+    <label for="query">Search</label>
+    <fieldset role="group">
+      <input id="query" type="text" name="query" minlength="4" required />
+      <button type="submit">Search</button>
+    </fieldset>
+  </form>
+  {
+    result &&
+      result.data &&
+      result?.data.map((item) => <ResultCard item={item} />)
+  }
+</Base>
