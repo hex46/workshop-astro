@@ -15,12 +15,10 @@ test.describe("Etape 3 - créer une page /planets/[id].astro présentant les dif
     await expect(titreH2).toBeVisible();
 
     // Afficher une image
-    const image = page.getByRole("img");
-    await expect(image).toBeVisible();
-    await expect(image).toHaveAttribute(
-      "alt",
+    const image = page.getByAltText(
       "View of Earth photographed by Apollo 15 on voyage to the Moon",
     );
+    await expect(image).toBeVisible();
 
     // Afficher la description
     const textDescription =
@@ -51,12 +49,10 @@ test.describe("Etape 3 - créer une page /planets/[id].astro présentant les dif
     await expect(titreH2).toBeVisible();
 
     // Afficher une image
-    const image = page.getByRole("img");
-    await expect(image).toBeVisible();
-    await expect(image).toHaveAttribute(
-      "alt",
+    const image = page.getByAltText(
       "Hubble Captures Vivid Auroras in Jupiter’s Atmosphere",
     );
+    await expect(image).toBeVisible();
 
     // Afficher la description
     const textDescription1 =
@@ -96,9 +92,8 @@ test.describe("Etape 3 - créer une page /planets/[id].astro présentant les dif
     await expect(titreH2).toBeVisible();
 
     // Afficher une image
-    const image = page.getByRole("img");
+    const image = page.getByAltText("Global Color Views of Mars");
     await expect(image).toBeVisible();
-    await expect(image).toHaveAttribute("alt", "Global Color Views of Mars");
 
     // Afficher la description
     const textDescription = "Global Color Views of Mars";
@@ -128,9 +123,8 @@ test.describe("Etape 3 - créer une page /planets/[id].astro présentant les dif
     await expect(titreH2).toBeVisible();
 
     // Afficher une image
-    const image = page.getByRole("img");
+    const image = page.getByAltText("Hello, Mercury!");
     await expect(image).toBeVisible();
-    await expect(image).toHaveAttribute("alt", "Hello, Mercury!");
 
     // Afficher la description
     const textDescription = "Hello, Mercury!";
@@ -160,9 +154,8 @@ test.describe("Etape 3 - créer une page /planets/[id].astro présentant les dif
     await expect(titreH2).toBeVisible();
 
     // Afficher une image
-    const image = page.getByRole("img");
+    const image = page.getByAltText("Neptune Scooter");
     await expect(image).toBeVisible();
-    await expect(image).toHaveAttribute("alt", "Neptune Scooter");
 
     // Afficher la description
     const textDescription =
@@ -193,12 +186,8 @@ test.describe("Etape 3 - créer une page /planets/[id].astro présentant les dif
     await expect(titreH2).toBeVisible();
 
     // Afficher une image
-    const image = page.getByRole("img");
+    const image = page.getByAltText("Saturn, Approaching Northern Summer");
     await expect(image).toBeVisible();
-    await expect(image).toHaveAttribute(
-      "alt",
-      "Saturn, Approaching Northern Summer",
-    );
 
     // Afficher la description
     const textDescription =
@@ -229,12 +218,10 @@ test.describe("Etape 3 - créer une page /planets/[id].astro présentant les dif
     await expect(titreH2).toBeVisible();
 
     // Afficher une image
-    const image = page.getByRole("img");
-    await expect(image).toBeVisible();
-    await expect(image).toHaveAttribute(
-      "alt",
+    const image = page.getByAltText(
       "Hubble Reveals Dynamic Atmospheres of Uranus, Neptune",
     );
+    await expect(image).toBeVisible();
 
     // Afficher la description
     const textDescription1 =
@@ -274,9 +261,8 @@ test.describe("Etape 3 - créer une page /planets/[id].astro présentant les dif
     await expect(titreH2).toBeVisible();
 
     // Afficher une image
-    const image = page.getByRole("img");
+    const image = page.getByAltText("Venus from Mariner 10");
     await expect(image).toBeVisible();
-    await expect(image).toHaveAttribute("alt", "Venus from Mariner 10");
 
     // Afficher la description
     const textDescription1 =
