@@ -1,7 +1,7 @@
 ---
 import Base from "@/layouts/Base.astro";
-import { findByNasaId } from "@/services/search";
 import { Image } from "astro:assets";
+import { actions } from "astro:actions";
 
 const { nasa_id } = Astro.params;
 
@@ -9,15 +9,16 @@ if (!nasa_id) {
   return Astro.redirect("/404");
 }
 
-const nasaItem = await findByNasaId(nasa_id);
+// https://docs.astro.build/en/reference/api-reference/#callaction
+const { data, error } = await Astro.callAction(actions.get, { id: nasa_id });
 
-if (!nasaItem) {
+if (error) {
   return Astro.redirect("/404");
 }
 
-const description = nasaItem.data[0].description;
-const source = nasaItem.href;
-const image = nasaItem.links.find((image) => (image.render = "image"))?.href;
+const description = data.data[0].description;
+const source = data.href;
+const image = data.links.find((image) => (image.render = "image"))?.href;
 ---
 
 <Base title="Hello there">

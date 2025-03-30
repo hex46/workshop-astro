@@ -22,4 +22,16 @@ export const server = {
       return data.collection.items.sort(sortResult());
     },
   }),
+  get: defineAction({
+    input: z.object({
+      id: z.string(),
+    }),
+    handler: async (input) => {
+      const response = await fetch(
+        `https://images-api.nasa.gov/search?nasa_id=${input.id}`,
+      );
+      const data = (await response.json()) as NasaCollection;
+      return data.collection.items[0];
+    },
+  }),
 };
