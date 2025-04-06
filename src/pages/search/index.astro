@@ -12,6 +12,7 @@ const result = Astro.getActionResult(actions.search);
   <form method="POST" action={actions.search} aria-label="search">
     <SearchForm query={query} />
   </form>
+  {result && result.error && <p class="pico-color-pink-500">{result.error}</p>}
   {
     result &&
       result.data &&

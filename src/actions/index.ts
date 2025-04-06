@@ -1,25 +1,27 @@
 import { defineAction } from "astro:actions";
 import { z } from "astro:schema";
-import type { NasaCollection, NasaItem } from "@/type/NasaType.ts";
+import type { NasaItem } from "@/type/NasaType.ts";
 
 export const server = {
   search: defineAction({
     accept: "form",
     input: z.object({
-      query: z.string(),
+      query: z.string().optional(),
     }),
     handler: async (input) => {
-      const response = await fetch(
-        `https://images-api.nasa.gov/search?q=${input.query}&page_size=5&media_type=image`,
-      );
-      const data = (await response.json()) as NasaCollection;
+      const query = input.query;
+      const response = query
+        ? await fetch(`http://localhost:4321/mock/nasa-api/${query}`)
+        : await fetch(`http://localhost:4321/mock/nasa-api/`);
+
+      const data = (await response.json()) as NasaItem[];
 
       function sortResult() {
         return (a: NasaItem, b: NasaItem) =>
           a.data[0].nasa_id.localeCompare(b.data[0].nasa_id);
       }
 
-      return data.collection.items.sort(sortResult());
+      return data.sort(sortResult());
     },
   }),
   get: defineAction({
@@ -28,10 +30,11 @@ export const server = {
     }),
     handler: async (input) => {
       const response = await fetch(
-        `https://images-api.nasa.gov/search?nasa_id=${input.id}`,
+        `http://localhost:4321/mock/nasa-api/find/${input.id}`,
       );
-      const data = (await response.json()) as NasaCollection;
-      return data.collection.items[0];
+
+      if (response.ok) return (await response.json()) as NasaItem;
+      else return undefined;
     },
   }),
 };

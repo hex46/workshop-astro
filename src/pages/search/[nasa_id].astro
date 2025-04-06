@@ -4,7 +4,7 @@ import { Image } from "astro:assets";
 import { actions } from "astro:actions";
 
 const { nasa_id } = Astro.params;
-
+console.log(nasa_id);
 if (!nasa_id) {
   return Astro.redirect("/404");
 }
@@ -12,8 +12,13 @@ if (!nasa_id) {
 // https://docs.astro.build/en/reference/api-reference/#callaction
 const { data, error } = await Astro.callAction(actions.get, { id: nasa_id });
 
-if (error) {
+if (!data) {
   return Astro.redirect("/404");
+}
+
+if (error) {
+  console.error(error);
+  return Astro.redirect("/500");
 }
 
 const description = data.data[0].description;

@@ -29,6 +29,8 @@ test.describe("Etape 6 - Gérer les résultats du formulaire", () => {
     const goToPage = cards.first().getByRole("link", { name: "Read more..." });
     await goToPage.click();
 
-    await page.waitForURL("**/search/PIA03239");
+    await page.waitForURL(
+      "**/search/hubble-observes-one-of-a-kind-star-nicknamed-nasty_17754652960_o",
+    );
   });
 });

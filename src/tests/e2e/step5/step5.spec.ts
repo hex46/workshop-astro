@@ -28,6 +28,6 @@ test.describe("Etape 5 - Créer un formulaire de recherche", () => {
     await form.getByRole("button", { name: "Search" }).click();
 
     const cards = page.getByRole("article");
-    expect(await cards.count()).toBe(5);
+    expect(await cards.count()).toBe(1);
   });
 });
