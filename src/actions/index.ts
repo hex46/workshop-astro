@@ -24,4 +24,17 @@ export const server = {
       return data.sort(sortResult());
     },
   }),
+  get: defineAction({
+    input: z.object({
+      id: z.string(),
+    }),
+    handler: async (input) => {
+      const response = await fetch(
+        `http://localhost:4321/mock/nasa-api/find/${input.id}`,
+      );
+
+      if (response.ok) return (await response.json()) as NasaItem;
+      else return undefined;
+    },
+  }),
 };
