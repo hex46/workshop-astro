@@ -1,0 +1,22 @@
+---
+interface Props {
+  query: string | undefined;
+}
+
+const { query } = Astro.props;
+---
+
+<>
+  <label for="query">Search</label>
+  <fieldset role="group">
+    <input
+      id="query"
+      type="text"
+      name="query"
+      minlength="4"
+      value={query}
+      placeholder="Hubble, Milky Way, star, etc."
+    />
+    <button type="submit">Search</button>
+  </fieldset>
+</>
