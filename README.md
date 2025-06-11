@@ -30,12 +30,12 @@ Avant de commencer, assurez-vous d'avoir les éléments suivants :
 
 ```bash
 git clone https://github.com/hex46/workshop-astro.git
-git checkout devoxx-2025
+git checkout init
 cd workshop-astro
 ```
 
 ### Installer les dépendances
-
+~~~~
 ```bash
 npm install
 npx playwright install --with-deps
